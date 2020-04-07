@@ -52,6 +52,10 @@ class App extends React.Component {
     });
   };
 
+  deleteTodo = id =>{
+    this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)]})
+  }
+
   toggleTodo = todoId => {
     this.setState({
       todos: this.state.todos.map(todo =>{
@@ -86,6 +90,7 @@ clearCompleted = e => {
         todos={this.state.todos}
         toggleTodo={this.toggleTodo}
         clearCompleted={this.clearCompleted}
+        deleteTodo={this.deleteTodo}
         />
       </div>
     );
