@@ -10,6 +10,9 @@ export class TodoForm extends Component {
     
      handleChanges = e => {
          this.setState({ [e.target.name]: e.target.value})
+         //  alternate syntax: this.setState({
+        //      todo: e.target.value 
+        //  })
      }
 
      submitTodo = e => {

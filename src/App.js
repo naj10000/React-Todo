@@ -52,17 +52,19 @@ class App extends React.Component {
     });
   };
 
-  deleteTodo = id =>{
-    this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)]})
-  }
+  // deleteTodo = id =>{
+  //   this.setState({todos: [...this.state.todos.filter(todo => todo.id !== id)]})
+  // }
 
+  // toggle Item completed
   toggleTodo = todoId => {
+    console.log(todoId)
     this.setState({
       todos: this.state.todos.map(todo =>{
         if (todoId === todo.id){
           return {
-            ...todo,
-            completed: !todo.completed
+            ...todo,//spread operation
+            completed: !todo.completed //makes it the opposite of current state
           };
         }
         return todo;
